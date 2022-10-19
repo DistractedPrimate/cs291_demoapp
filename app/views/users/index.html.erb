@@ -5,6 +5,13 @@
 <div id="users">
   <% @users.each do |user| %>
     <%= render user %>
+    <%= render html: "POST" %>
+    <% user.posts.each do |post| %>
+      <%= render post %>
+      <p>
+        <%= link_to "Show this post", post %>
+      </p>
+    <% end %>
     <p>
       <%= link_to "Show this user", user %>
     </p>
