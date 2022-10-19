@@ -8,9 +8,11 @@
     <%= render html: "POST" %>
     <% user.posts.each do |post| %>
       <%= render post %>
-      <p>
-        <%= link_to "Show this post", post %>
-      </p>
+      <%= render html: "COMMENTS" %>
+      <% post.comments.each do |comment| %>
+        <%= puts "here" %>
+		    <%= render comment %>
+      <% end %>
     <% end %>
     <p>
       <%= link_to "Show this user", user %>
